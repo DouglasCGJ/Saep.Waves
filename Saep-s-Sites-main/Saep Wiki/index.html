@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Saep's Waves - Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="ini.js">
+</head>
+<body>
+    <section id="TituloWiki">
+        <h2>Mini-Wiki</h2>
+    </section>
+
+    <!-- Seções para Mini Wiki, Adicionar imagens -->
+    <!--<section id="armas">
+        <h2>Armas</h2>
+        <p>Armas básicas, disponibilizadas pelo SENAI</p>
+        <div class="armas-conteiner">
+            <div class="armas-slides">
+                <img src="../sources/drive-download-20241101T133050Z-001/Pistola.png" class="Pistola">
+                <img src="../sources/drive-download-20241101T133050Z-001/Rifle.png" class="Rifle">
+                <img src="../sources/drive-download-20241101T133050Z-001/Bazuka.png" class="Bazuka">
+                <img src="../sources/drive-download-20241101T133050Z-001/Faca.png" class="Faca">
+            </div>
+            <button class="prev" onclick="moveArmasSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveArmasSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="personagens">
+        <h2>Personagens</h2>
+        <p>Detalhes sobre os personagens do jogo...</p>
+        <div class="personagens-conteiner">
+            <div class="personagens-slides">
+                <img src="../sources/drive-download-20241101T133050Z-001/Menininha do senai.png" class="Menininha">
+            </div>
+            <button class="prev" onclick="movePersonagemSlide(-1)">&#10094;</button>
+            <button class="next" onclick="movePersonagemSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="inimigos">
+        <h2>Inimigos</h2>
+        <p>Detalhes sobre os Inimigos do jogo...</p>
+        <div class="inimigos-conteiner">
+            <div class="inimigos-slides">
+                <img src="../sources/drive-download-20241101T133050Z-001/Robo.gif" class="Robo">
+            </div>
+            <button class="prev" onclick="moveInimigoSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveInimigoSlide(1)">&#10095;</button>
+        </div>
+    </section>-->
+
+    <section class="one">
+        <h2>Armas</h2>
+        <p>Armas básicas, disponibilizadas pelo SENAI</p>
+        <div class="carousel">
+            <div class="slides">
+                <img src="../sources/drive-download-20241101T133050Z-001/muie.gif" alt="Imagem 1">
+                <img src="../sources/drive-download-20241101T133050Z-001/pato.gif" alt="Imagem 2">
+                <img src="../sources/drive-download-20241101T133050Z-001/Robo.gif" alt="Imagem 3">
+            </div>
+            <div class="carousel-buttons">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+            </div>
+        </div>
+        
+        <h2>Personagens</h2>
+        <p>Detalhes sobre os personagens do jogo...</p>
+        <div class="carousel">
+            <div class="slides">
+                <img src="../sources/drive-download-20241101T133050Z-001/muie.gif" alt="Imagem 1">
+                <img src="../sources/drive-download-20241101T133050Z-001/pato.gif" alt="Imagem 2">
+                <img src="../sources/drive-download-20241101T133050Z-001/Robo.gif" alt="Imagem 3">
+            </div>
+            <div class="carousel-buttons">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+            </div>
+        </div>
+
+        <h2>Inimigos</h2>
+        <p>Detalhes sobre os Inimigos do jogo...</p>
+        <div class="carousel">
+            <div class="slides">
+                <img src="../sources/drive-download-20241101T133050Z-001/muie.gif" alt="Imagem 1">
+                <img src="../sources/drive-download-20241101T133050Z-001/pato.gif" alt="Imagem 2">
+                <img src="../sources/drive-download-20241101T133050Z-001/Robo.gif" alt="Imagem 3">
+            </div>
+            <div class="carousel-buttons">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+            </div>
+        </div>
+        <script>
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+        
+            let currentIndex = 0;
+        
+            function showSlide(index) {
+                if (index >= images.length) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = images.length - 1;
+                } else {
+                    currentIndex = index;
+                }
+                const offset = -currentIndex * 100;
+                slides.style.transform = `translateX(${offset}%)`;
+            }
+        
+            nextButton.addEventListener('click', () => {
+                showSlide(currentIndex + 1);
+            });
+        
+            prevButton.addEventListener('click', () => {
+                showSlide(currentIndex - 1);
+            });
+        
+            setInterval(() => {
+                showSlide(currentIndex + 1);
+            }, 5000);
+        </script>
+</body>
+</html>
